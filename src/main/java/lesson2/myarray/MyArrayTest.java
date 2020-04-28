@@ -1,4 +1,4 @@
-package lesson1.myarray;
+package lesson2.myarray;
 
 public class MyArrayTest {
     public static void main(String[] args) {

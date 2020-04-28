@@ -1,4 +1,4 @@
-package lesson1.myarray;
+package lesson2.myarray;
 
 import java.util.Arrays;
 import java.util.Objects;

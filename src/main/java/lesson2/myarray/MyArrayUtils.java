@@ -1,4 +1,4 @@
-package lesson1.myarray;
+package lesson2.myarray;
 
 public final class MyArrayUtils {
     private MyArrayUtils() {
