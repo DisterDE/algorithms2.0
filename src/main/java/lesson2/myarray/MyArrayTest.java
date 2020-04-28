@@ -1,34 +1,33 @@
 package lesson2.myarray;
 
+import java.util.Random;
+
 public class MyArrayTest {
+    private static final int ARRAY_SIZE = 1_000_000;
+    private static final Random RND = new Random();
+
     public static void main(String[] args) {
-        MyArray<Integer> numbers = new MyArray<>();
-        numbers.add(0, 5);
-        numbers.add(0, 4);
-        numbers.add(1);
-        numbers.add(3);
-        numbers.add(2);
-        numbers.add(1);
-        numbers.add(1);
-        numbers.add(0);
-        System.out.println(numbers);
+        MyArray<Integer> numbers = new MyArray<>((int) (ARRAY_SIZE * 1.5));
 
-        numbers.add(2, 3);
-        System.out.println(numbers);
+        fillRandomNumbers(numbers);
+        long start = System.currentTimeMillis();
+        MyArrayUtils.sortBubble(numbers);
+        System.out.println("Bubble sort: " + (System.currentTimeMillis() - start));
 
-        numbers.removeFirst(1);
-        System.out.println(numbers);
+        fillRandomNumbers(numbers);
+        start = System.currentTimeMillis();
+        MyArrayUtils.sortSelect(numbers);
+        System.out.println("Selection sort: " + (System.currentTimeMillis() - start));
 
-        numbers.removeLast(1);
-        System.out.println(numbers);
-
-//        MyArrayUtils.sortBubble(numbers);
-//        MyArrayUtils.sortSelect(numbers);
+        fillRandomNumbers(numbers);
+        start = System.currentTimeMillis();
         MyArrayUtils.quickSort(numbers, 0, numbers.size() - 1);
-        System.out.println(numbers);
+        System.out.println("Quick sort: " + (System.currentTimeMillis() - start));
+    }
 
-        System.out.println("first: " + numbers.get(0));
-
-        System.out.println("size: " + numbers.size());
+    private static void fillRandomNumbers(MyArray<Integer> numbers) {
+        for (int i = 0; i < ARRAY_SIZE; i++) {
+            numbers.add(RND.nextInt());
+        }
     }
 }
