@@ -2,8 +2,10 @@ package lesson2.task1;
 
 public class Task1 {
     private static final int MATRIX_SIZE = 7;
-    private static int currentNum = 1;
+
     private static Direction currentDirection = Direction.RIGHT;
+
+    private static int currentNum = 1;
     private static int currentY;
     private static int currentX;
 
