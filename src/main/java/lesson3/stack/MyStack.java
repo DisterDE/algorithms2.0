@@ -1,11 +1,10 @@
 package lesson3.stack;
 
-import org.jetbrains.annotations.NotNull;
+import java.util.Arrays;
+import java.util.EmptyStackException;
+import java.util.Objects;
 
-import java.util.*;
-import java.util.function.Consumer;
-
-public class MyStack<E> implements Iterable<E> {
+public class MyStack<E> {
     private final Object[] storage;
     private int size;
 
@@ -74,21 +73,5 @@ public class MyStack<E> implements Iterable<E> {
         }
         sb.append("=====================");
         return sb.toString();
-    }
-
-    @NotNull
-    @Override
-    public Iterator<E> iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer<? super E> action) {
-
-    }
-
-    @Override
-    public Spliterator<E> spliterator() {
-        return null;
     }
 }
