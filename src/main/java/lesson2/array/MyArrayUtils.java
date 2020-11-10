@@ -34,7 +34,7 @@ public final class MyArrayUtils {
             return;
         }
 
-        int mid = start + (finish - start) / 2;
+        int mid = (start + finish) / 2;
         E pivot = elements.get(mid);
 
         int left = start;
